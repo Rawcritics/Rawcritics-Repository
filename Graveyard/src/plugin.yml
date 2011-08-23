@@ -1,0 +1,9 @@
+name: Graveyard
+version: 0.3.8
+main: com.McSpazzy.Graveyard.Graveyard
+
+commands:
+  graveyard:
+    description: Graveyard Commands
+    usage: /<command> <list | add | delete | tp | closest>
+    aliases: ['gy']

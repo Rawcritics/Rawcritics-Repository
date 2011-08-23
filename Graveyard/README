@@ -1,0 +1,56 @@
+Graveyard
+
+Version 0.3.8
+
+	* Custom respawn strings. Change the closest point's by using '/gy message message here'. You can set it to '/gy message none' for no message.
+	* Multiworld support.
+	* Took out permissions for now...I know, I'm a terrible person.
+
+Version 0.3.7
+
+	* Fixed bug caused by new CB version.
+
+Version 0.3.6
+
+	* Some general code cleanups
+
+Version 0.3.5
+
+    * Removed support for Towny, will re-add soon.
+    * Fixed null when trying to TP to a non existant point.
+    * Updated command list
+
+Version 0.3.2
+
+    * Added support for Towny.
+
+Version 0.3.1
+
+    * Fixed not creating folders on first load bug. Thanks to @spowney for pointing out my stupid mistake. =D
+      (I forgot to put it back in after the code rewrite)
+
+Version 0.3
+
+    * Changes to the commands.
+    * Changes to the storing of spawn points.
+    * Better permissions support.
+
+Version 0.3pre
+
+    * Basic permissions support.
+    * Additional fixes and updates.
+
+Version 0.2.1
+
+    * This is only an intermediate release to address important bugs and compatibility issues.
+    * New add coordinate command that works in game as well as from the console.
+    * Fixed a few of the command catch errors. So there should be no more console error spamming.
+    * The graveyard points now supersedes beds and other plugins. (The ones I tested) Except those plugins which have their priority set to highest.
+
+Version 0.2
+
+    * Added in game add point command. (Remove and list still coming)
+
+Version 0.1
+
+    * Initial Release
