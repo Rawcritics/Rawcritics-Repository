@@ -1,6 +1,5 @@
 package com.McSpazzy.Graveyard;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
@@ -27,9 +26,6 @@ public class Graveyard extends JavaPlugin
 	public GraveyardConfig GraveyardConfig = new GraveyardConfig(this);
 	public PluginsChecker PlugnChecker = new PluginsChecker(this);
 	
-	
-
-
 	public void onDisable()
 	{
 		GraveyardConfig.saveConfig();
@@ -42,7 +38,7 @@ public class Graveyard extends JavaPlugin
 		GraveyardConfig.init();
 		GraveyardConfig.loadConfig();
 
-		loadPoints();
+		SpawnHandler.loadPoints();
 		
 		if(GraveyardConfig.isUsingPermissions()){
 			log.info("[" + this.getDescription().getName()+"] " + PlugnChecker.checkForPermissions());
@@ -58,9 +54,4 @@ public class Graveyard extends JavaPlugin
 		getCommand("graveyard").setExecutor(new GraveyardCommands(this));
 
 	}
-
-	public void loadPoints() {
-		for (File file : new File(PointsDirectory).listFiles()) SpawnHandler.loadSpawnPoint(file.getPath(), getServer());
-	}
-
 }

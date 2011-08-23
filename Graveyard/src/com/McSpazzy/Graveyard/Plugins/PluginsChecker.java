@@ -12,13 +12,13 @@ public class PluginsChecker{
 
 	public String checkForPermissions(){
 
-		if(plugin.getServer().getPluginManager().getPlugin("PermissionsEx") != null){
+		if(plugin.getServer().getPluginManager().getPlugin("Using PermissionsEx.") != null){
 			return "PermissionsEx";
 		}
-		if(plugin.getServer().getPluginManager().getPlugin("Permissions") != null){
+		if(plugin.getServer().getPluginManager().getPlugin("Using Permissions.") != null){
 			return "Permissions";
 		}
-		if(plugin.getServer().getPluginManager().getPlugin("PermissionsBukkit") != null){
+		if(plugin.getServer().getPluginManager().getPlugin("Using PermissionsBukkit.") != null){
 			return "PermissionsBukkit";
 		}
 		return "No permissions plugin found.";

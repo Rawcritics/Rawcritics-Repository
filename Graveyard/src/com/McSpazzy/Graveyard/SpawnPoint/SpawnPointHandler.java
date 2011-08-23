@@ -1,5 +1,6 @@
 package com.McSpazzy.Graveyard.SpawnPoint;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.util.Collection;
@@ -195,5 +196,8 @@ public class SpawnPointHandler{
 			return true;
 		}
 		return false;
+	}
+	public void loadPoints() {
+		for (File file : new File(plugin.PointsDirectory).listFiles()) loadSpawnPoint(file.getPath(), plugin.getServer());
 	}
 }
