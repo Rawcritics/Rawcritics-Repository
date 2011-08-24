@@ -14,9 +14,7 @@ public class GraveyardPlayerListener extends PlayerListener {
 	}
 
 	public void onPlayerRespawn(PlayerRespawnEvent event) {
-
-		if (plugin.SpawnPointList.size() > 0){
-			//SpawnPoint closest = plugin.SpawnHandler.getClosest(plugin.DeathLocation.get(event.getPlayer().getName()));
+		if (plugin.SpawnPointList.size() > 0 && plugin.Permissions.hasPermission(event.getPlayer(), "graveyard.respawn")){
 			SpawnPoint closest = plugin.SpawnHandler.getClosest(event.getPlayer().getLocation());
 			if(!closest.getSpawnMessage().equalsIgnoreCase("none")){event.getPlayer().sendMessage(closest.getSpawnMessage());}
 			event.setRespawnLocation(closest.getLocation());

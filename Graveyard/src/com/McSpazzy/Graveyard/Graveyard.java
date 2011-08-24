@@ -7,6 +7,7 @@ import org.bukkit.event.Event;
 import org.bukkit.event.Event.Priority;
 import org.bukkit.plugin.java.JavaPlugin;
 import com.McSpazzy.Graveyard.Commands.GraveyardCommands;
+import com.McSpazzy.Graveyard.Permissions.PermissionsChecker;
 import com.McSpazzy.Graveyard.Plugins.PluginsChecker;
 import com.McSpazzy.Graveyard.SpawnPoint.SpawnPointHandler;
 import com.McSpazzy.Graveyard.SpawnPoint.SpawnPoint;
@@ -25,6 +26,7 @@ public class Graveyard extends JavaPlugin
 	public Map<String, SpawnPoint> SpawnPointList = new HashMap<String, SpawnPoint>();
 	public GraveyardConfig GraveyardConfig = new GraveyardConfig(this);
 	public PluginsChecker PluginChecker = new PluginsChecker(this);
+	public PermissionsChecker Permissions = new PermissionsChecker(this);
 	
 	public void onDisable()
 	{

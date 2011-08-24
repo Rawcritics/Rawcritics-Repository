@@ -10,20 +10,20 @@ import com.McSpazzy.Graveyard.Graveyard;
 public class PermissionsChecker{
 
 	public final Graveyard plugin;
-	private String PermsPlugin;
-	
+
 	public PermissionsChecker(Graveyard instance) {
 		plugin = instance;
-		PermsPlugin = plugin.GraveyardConfig.getPermissionsPlugin();
 	}
-	
+
 	public boolean hasPermission(Player player, String permission){
-		
-		if (PermsPlugin.equalsIgnoreCase("PermissionsEX")){
-			PermissionsExHandler(player, permission);
+
+		if (plugin.GraveyardConfig.getPermissionsPlugin().equalsIgnoreCase("PermissionsEX")){
+			if (PermissionsExHandler(player, permission)){
+				return true;
+			} else {
+				return false;
+			}
 		}
-		
-		
 		return false;
 	}
 
@@ -31,21 +31,18 @@ public class PermissionsChecker{
 		if(plugin.getServer().getPluginManager().isPluginEnabled("PermissionsEx")){
 			PermissionManager permissions = PermissionsEx.getPermissionManager();
 
-		    if(permissions.has(player, permission)){
-		    	return true;
-		    } else {
-		    	return false;
-		    }
-		    
+			if(permissions.has(player, permission)){
+				return true;
+			} else {
+				return false;
+			}
+			
 		} else {
-		  plugin.log.info("[" + plugin.getDescription().getName()+"] Error while connecting to permissions plugin.");
+			plugin.log.info("[" + plugin.getDescription().getName()+"] Error while connecting to permissions plugin.");
 		}
-		
-		
-		
 		return false;
 	}
-	
-	
-	
+
+
+
 }
