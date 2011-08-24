@@ -10,6 +10,7 @@ public class GraveyardConfig {
 	public Graveyard plugin;
 	private boolean permissions = false;
 	private boolean discovery = false;
+	private String permissionsplugin = "";
 	
 	public GraveyardConfig (Graveyard instance){
 		plugin = instance;
@@ -29,6 +30,14 @@ public class GraveyardConfig {
 	
 	public boolean isUsingDiscovery(){
 		return discovery;
+	}
+	
+	public String getPermissionsPlugin(){
+		return permissionsplugin;
+	}
+	
+	public void setPermissionsPlugin(String text){
+		permissionsplugin = text;
 	}
 	
 	public boolean isUsingPermissions(){

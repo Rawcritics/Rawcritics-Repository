@@ -12,16 +12,19 @@ public class PluginsChecker{
 
 	public String checkForPermissions(){
 
-		if(plugin.getServer().getPluginManager().getPlugin("Using PermissionsEx.") != null){
+		if(plugin.getServer().getPluginManager().getPlugin("PermissionsEx") != null){
+			plugin.GraveyardConfig.setPermissionsPlugin("PermissionsEx");
 			return "PermissionsEx";
 		}
-		if(plugin.getServer().getPluginManager().getPlugin("Using Permissions.") != null){
+		if(plugin.getServer().getPluginManager().getPlugin("Permissions") != null){
+			plugin.GraveyardConfig.setPermissionsPlugin("Permissions");
 			return "Permissions";
 		}
-		if(plugin.getServer().getPluginManager().getPlugin("Using PermissionsBukkit.") != null){
+		if(plugin.getServer().getPluginManager().getPlugin("PermissionsBukkit") != null){
+			plugin.GraveyardConfig.setPermissionsPlugin("PermissionsBukkit");
 			return "PermissionsBukkit";
 		}
-		return "No permissions plugin found.";
+		return "No permissions";
 		
 	}
 }

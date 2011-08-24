@@ -24,7 +24,7 @@ public class Graveyard extends JavaPlugin
 
 	public Map<String, SpawnPoint> SpawnPointList = new HashMap<String, SpawnPoint>();
 	public GraveyardConfig GraveyardConfig = new GraveyardConfig(this);
-	public PluginsChecker PlugnChecker = new PluginsChecker(this);
+	public PluginsChecker PluginChecker = new PluginsChecker(this);
 	
 	public void onDisable()
 	{
@@ -37,11 +37,10 @@ public class Graveyard extends JavaPlugin
 
 		GraveyardConfig.init();
 		GraveyardConfig.loadConfig();
-
 		SpawnHandler.loadPoints();
 		
 		if(GraveyardConfig.isUsingPermissions()){
-			log.info("[" + this.getDescription().getName()+"] " + PlugnChecker.checkForPermissions());
+			log.info("[" + this.getDescription().getName()+"] " + PluginChecker.checkForPermissions() + " plugin found.");
 		} else {
 			log.info("[" + this.getDescription().getName()+"] Using OP defaults");
 		}
